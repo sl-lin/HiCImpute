@@ -27,7 +27,7 @@ install.packages("devtools")
 library("devtools")
 
 # Install "HiCImpute" package from github.
-install_github("Queen0044/HiCImpute")
+install_github("https://github.com/sl-lin/HiCImpute")
 ```
 
 If you are Windows user, please install **Rtools40**
@@ -45,11 +45,14 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(HiCImpute)
-#' data("K562_T1_7k")
-#' data("K562_bulk")
-#' T1_7k_res=MCMCImpute(scHiC=K562_T1_7k,bulk=K562_bulk,
-#' startval=c(100,100,10,8,10,0.1,900,0.2,0,replicate(dim(scHiC)[2],8)),n=61,mc.cores = 1,
-#' cutoff=0.5, niter=100000,burnin=5000)
+#data("K562_T1_4k")
+#data("K562_bulk")
+#data("K562_T1_4k_true")
+#scHiC=K562_T1_4k
+#set.seed(1234)
+#T1_4k_result1=MCMCImpute(scHiC=K562_T1_4k,bulk=K562_bulk, expected=K562_T1_4k_true,
+#startval=c(100,100,10,8,10,0.1,900,0.2,0,replicate(dim(scHiC)[2],8)),n=61,
+#mc.cores = 1,cutoff=0.5, niter=100000,burnin=3000)
 ```
 
 For more information of functions, please read the vignettes.
