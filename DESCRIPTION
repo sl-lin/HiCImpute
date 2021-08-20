@@ -1,0 +1,27 @@
+Package: HiCImpute
+Type: Package
+Title: HiCImpute: An R Package Implementing "Bayesian Hierarchical Model for Identifying Structural Zeros and Enhancing Single-cell Hi-C Data"
+Version: 1.0
+Date: 2021-08-14
+Author: Qing Xie (The Ohio State University, USA), Shili Lin (The Ohio State University, USA)
+Maintainer: Qing Xie <xie.735@osu.edu>
+Description: HiCImpute carries out single cell HiC matrix imputation that takes neighborhood, similar cells, and bulk data into account.
+Depends: R (>= 3.5.0),
+License: GPL
+Imports: 
+    Rcpp,
+    parallel,
+    RcppArmadillo,
+    Rtsne,
+    ggpubr,
+    mclust,
+    ggplot2,
+    DescTools,
+    gridExtra
+LinkingTo: Rcpp, 
+           RcppArmadillo
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr, 
+    rmarkdown
+VignetteBuilder: knitr

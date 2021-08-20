@@ -1,0 +1,55 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# HiCImpute
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+**HiCImpute** (Xie, Han, Jin, and Lin, 2021) is a Bayesian hierarchy
+model that goes beyond data quality improvement by also identifying
+observed zeros that are in fact structural zeros. HiCImpute takes
+spatial dependencies of scHi-C 2D data structure into account while also
+borrowing information from similar single cells and bulk data, when such
+are available.
+
+## Installation
+
+The HiCImpute package has the following R-package dependencies: Rcpp,
+RcppArmadillo, parallel, Rtsne, ggplot2, ggpubr, and mclust. The
+dependent packages will be automatically installed along with HiCImpute.
+You can use the following commands to install HiCImpute from GitHub.
+
+``` r
+# Install and load "devtools" package. 
+install.packages("devtools")
+library("devtools")
+
+# Install "HiCImpute" package from github.
+install_github("Queen0044/HiCImpute")
+```
+
+If you are Windows user, please install **Rtools40**
+(<https://cran.r-project.org/bin/windows/Rtools/>) first, and restart R
+to install HiCImpute package. Note that Rtools40 is for R 4.0.0+ so that
+you might have to update your R version.
+
+If you have OneDrive backing-up “C:\\User\\Your\_user\_name\\Documents”,
+the installation may fail. You can download the zip file from Github and
+install HiCImpute manually.
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+library(HiCImpute)
+#' data("K562_T1_7k")
+#' data("K562_bulk")
+#' T1_7k_res=MCMCImpute(scHiC=K562_T1_7k,bulk=K562_bulk,
+#' startval=c(100,100,10,8,10,0.1,900,0.2,0,replicate(dim(scHiC)[2],8)),n=61,mc.cores = 1,
+#' cutoff=0.5, niter=100000,burnin=5000)
+```
+
+For more information of functions, please read the vignettes.
