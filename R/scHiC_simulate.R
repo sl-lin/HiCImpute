@@ -50,7 +50,7 @@ scHiC_simulate <- function(data=str1,alpha_0,alpha_1, beta_l,beta_g,beta_m,gamma
     ##sequence depth
     seqdepth <- sum(lambda[upper.tri(lambda)])
     ##true 0 positions
-    thresh <- quantile(lambda[upper.tri(lambda)],eta)
+    thresh <- quantile(lambda[upper.tri(lambda)],gamma)
     posi0 <- which(lambda<thresh & upper.tri(lambda),TRUE)
     true0 <- posi0[sample(nrow(posi0),size=0.5*nrow(posi0),replace=FALSE),]  
   
@@ -126,7 +126,7 @@ scHiC_simulate <- function(data=str1,alpha_0,alpha_1, beta_l,beta_g,beta_m,gamma
       true0rows <- c(true0rows,matrow( true0[i,1], true0[i,2]))
     }
     
-    random0 <- true0rows[sample(1:l,floor(l*eta))]
+    random0 <- true0rows[sample(1:l,floor(l*(1-eta)))]
     
     #underline true model for all single cells  
     underline <-  lambda
